@@ -25,64 +25,26 @@
     <!-- Contenido principal -->
     <main class="mdl-layout__content">
       <div class="page-content">
-
-        <!-- Imagen representativa ESPE -->
+        
+        <!-- Imagen principal -->
         <div class="img-container">
-          <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" 
-               alt="ESPE" class="img-principal">
+          <img src="img/matriz.png" 
+               alt="ESPE Matriz" class="img-principal">
         </div>
-
-        <!-- Formulario para nueva nota -->
-        <form id="add-note-form">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <textarea class="mdl-textfield__input" type="text" rows="3" id="note-text"></textarea>
-            <label class="mdl-textfield__label" for="note-text">Escribe tu nota aquí...</label>
-          </div>
-        </form>
 
         <!-- Contenedor de notas -->
         <div class="mdl-grid" id="notes-container">
-          <!-- Nota 1 -->
+          <!-- Nota ejemplo 1 -->
           <div class="mdl-cell mdl-cell--4-col">
             <div class="mdl-card mdl-shadow--2dp note-card">
               <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">Nota 1</h2>
               </div>
               <div class="mdl-card__media">
-                <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" class="img-card" alt="ESPE">
+                <img src="img/opi.jpg" class="img-card" alt="ESPE">
               </div>
               <div class="mdl-card__supporting-text">
                 La Universidad de las Fuerzas Armadas ESPE sede Santo Domingo cuenta con 3 carreras muy importantes.
-              </div>
-            </div>
-          </div>
-
-          <!-- Nota 2 -->
-          <div class="mdl-cell mdl-cell--4-col">
-            <div class="mdl-card mdl-shadow--2dp note-card">
-              <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Nota 2</h2>
-              </div>
-              <div class="mdl-card__media">
-                <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" class="img-card" alt="ESPE">
-              </div>
-              <div class="mdl-card__supporting-text">
-                Estudiar en la Universidad de las Fuerzas Armadas te da muchas oportunidades. ¡Estudia aquí!
-              </div>
-            </div>
-          </div>
-
-          <!-- Nota 3 -->
-          <div class="mdl-cell mdl-cell--4-col">
-            <div class="mdl-card mdl-shadow--2dp note-card">
-              <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Nota 3</h2>
-              </div>
-              <div class="mdl-card__media">
-                <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" class="img-card" alt="ESPE">
-              </div>
-              <div class="mdl-card__supporting-text">
-                En la Universidad de las Fuerzas Armadas ESPE lo mejor son los estudiantes.
               </div>
             </div>
           </div>
@@ -98,7 +60,16 @@
     </main>
   </div>
 
-  <!-- Botón flotante con signo + -->
+  <!-- Formulario flotante para agregar nota -->
+  <div id="note-form" class="note-form">
+    <h3>Añadir Nota</h3>
+    <input type="text" id="note-title" placeholder="Título de la nota">
+    <textarea id="note-text" placeholder="Escribe tu nota"></textarea>
+    <button id="add-note-btn" class="mdl-button mdl-js-button mdl-button--colored">Guardar Nota</button>
+    <button id="close-note-btn" class="mdl-button mdl-js-button">Cancelar</button>
+  </div>
+
+  <!-- Botón flotante -->
   <button id="save-note-btn" 
           class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
     <i class="material-icons">add</i>
