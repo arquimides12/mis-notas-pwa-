@@ -79,3 +79,49 @@
 .note-form button {
   margin-right: 10px;
 }
+/* -------------- Media Queries -------------- */
+@media (max-width: 768px) {
+  .img-principal {
+    max-height: 200px; /* tablet/móvil */
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 10px;
+  }
+
+  .img-card {
+    height: 120px;
+  }
+
+  .note-form {
+    width: 90%; /* móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .img-principal {
+    max-height: 150px; /* móviles pequeños */
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr; 
+    gap: 10px;
+    margin: 10px;
+  }
+
+  .img-card {
+    height: 100px; 
+  }
+
+  #save-note-btn {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .note-form {
+    width: 95%; /* Formulario casi completo ancho */
+    padding: 15px;
+  }
+}
