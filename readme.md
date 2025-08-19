@@ -72,3 +72,20 @@ Luego abre tu navegador en:
 ```bash
 http://127.0.0.1:8000
 ``` 
+# Puebas 
+> Ejecucion 
+
+![img](img/evidencia1.png)
+
+> Agregar nota  
+
+![img](img/evidencia2.png)
+
+> notas agregadas  
+
+![img](img/evidencia3.png)
+
+> git page 
+
+![img](img/prueba.jpg)
+
