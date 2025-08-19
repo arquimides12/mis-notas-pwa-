@@ -1,0 +1,17 @@
+/* Botón flotante en la esquina inferior derecha */
+#save-note-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* Contenedor de notas */
+#notes-container {
+  margin-top: 20px;
+}
+
+/* Tarjetas personalizadas */
+.note-card {
+  width: 100%;
+  margin-bottom: 16px;
+}
