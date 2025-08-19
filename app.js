@@ -1,4 +1,6 @@
-// Referencias
+// =======================
+// Referencias Notas
+// =======================
 const saveBtn = document.getElementById("save-note-btn");
 const notesContainer = document.getElementById("notes-container");
 const snackbar = document.getElementById("snackbar");
@@ -71,9 +73,36 @@ addNoteBtn.addEventListener("click", () => {
   noteForm.style.display = "none";
 });
 
+// =======================
 // Registro de Service Worker
+// =======================
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js")
     .then(() => console.log("✅ Service Worker registrado"))
     .catch(err => console.error("❌ Error registrando SW:", err));
 }
+
+// =======================
+// Botón Instalar PWA
+// =======================
+let deferredPrompt;
+const installBtn = document.getElementById("install-btn");
+
+// Escuchar el evento beforeinstallprompt
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = "block"; 
+});
+
+// Evento para el botón de instalación
+installBtn.addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`Usuario eligió: ${outcome}`);
+    deferredPrompt = null;
+  } else {
+    console.log(" La app ya está instalada o no es instalable en este momento.");
+  }
+});
