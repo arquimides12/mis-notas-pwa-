@@ -1,17 +1,55 @@
-/* Botón flotante en la esquina inferior derecha */
+/* Imagen principal */
+.img-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.img-principal {
+  width: 100%;
+  max-height: 250px;   /* Ajusta altura para que no sea muy larga */
+  object-fit: cover;   /* Mantiene proporción y recorta si es necesario */
+  border-radius: 10px;
+}
+
+/* Imagenes de las cards */
+.img-card {
+  width: 100%;
+  height: 150px;       /* Altura uniforme para todas las cards */
+  object-fit: cover;   /* Ajusta la imagen sin deformarla */
+  border-radius: 4px;
+}
+
+/* Botón flotante */
 #save-note-btn {
   position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: 100;
 }
 
-/* Contenedor de notas */
-#notes-container {
-  margin-top: 20px;
+/* Grid de cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 20px;
 }
 
-/* Tarjetas personalizadas */
+/* Cards individuales */
 .note-card {
   width: 100%;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Títulos de cards más pequeños */
+.mdl-card__title-text {
+  font-size: 1.2rem;
+}
+
+/* Opcional: para compatibilidad con mdl-grid si lo usas */
+.mdl-grid {
+  margin: 20px;
+  gap: 16px;
 }

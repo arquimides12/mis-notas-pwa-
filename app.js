@@ -7,26 +7,37 @@ const snackbar = document.getElementById("snackbar");
 // Función para crear tarjeta de nota
 function addNoteCard(text) {
   const cardHTML = `
-    <div class="mdl-card mdl-shadow--2dp note-card">
-      <div class="mdl-card__supporting-text">
-        ${text}
+    <div class="mdl-cell mdl-cell--4-col">
+      <div class="mdl-card mdl-shadow--2dp note-card">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Nueva Nota</h2>
+        </div>
+        <div class="mdl-card__media">
+          <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" class="img-card" alt="ESPE">
+        </div>
+        <div class="mdl-card__supporting-text">
+          ${text}
+        </div>
       </div>
     </div>
   `;
   notesContainer.insertAdjacentHTML("beforeend", cardHTML);
+
+  // Actualizar MDL para nuevos elementos
+  componentHandler.upgradeAllRegistered();
+
+  // Mostrar snackbar
+  snackbar.MaterialSnackbar.showSnackbar({
+    message: "Nota guardada correctamente"
+  });
 }
 
-// Guardar nota
+// Evento del botón +
 saveBtn.addEventListener("click", () => {
   const text = noteText.value.trim();
   if (text !== "") {
     addNoteCard(text);
     noteText.value = "";
-
-    // Mostrar snackbar
-    snackbar.MaterialSnackbar.showSnackbar({
-      message: "Nota guardada correctamente"
-    });
   } else {
     snackbar.MaterialSnackbar.showSnackbar({
       message: "Escribe algo antes de guardar"

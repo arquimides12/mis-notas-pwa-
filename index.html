@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mis Notas PWA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis Notas ESPE</title>
 
   <!-- MDL CSS & Google Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <link rel="stylesheet" href="style.css">
-  
+
   <!-- Manifest -->
   <link rel="manifest" href="manifest.json">
 </head>
@@ -18,24 +18,75 @@
     <!-- Header -->
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Mis Notas PWA</span>
+        <span class="mdl-layout-title">Mis Notas ESPE</span>
       </div>
     </header>
 
     <!-- Contenido principal -->
     <main class="mdl-layout__content">
       <div class="page-content">
-        
-        <!-- Formulario -->
+
+        <!-- Imagen representativa ESPE -->
+        <div class="img-container">
+          <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" 
+               alt="ESPE" class="img-principal">
+        </div>
+
+        <!-- Formulario para nueva nota -->
         <form id="add-note-form">
-          <div class="mdl-textfield mdl-js-textfield">
-            <textarea class="mdl-textfield__input" rows="3" id="note-text"></textarea>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <textarea class="mdl-textfield__input" type="text" rows="3" id="note-text"></textarea>
             <label class="mdl-textfield__label" for="note-text">Escribe tu nota aquí...</label>
           </div>
         </form>
 
         <!-- Contenedor de notas -->
-        <div id="notes-container"></div>
+        <div class="mdl-grid" id="notes-container">
+          <!-- Nota 1 -->
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-card mdl-shadow--2dp note-card">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Nota 1</h2>
+              </div>
+              <div class="mdl-card__media">
+                <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" class="img-card" alt="ESPE">
+              </div>
+              <div class="mdl-card__supporting-text">
+                La Universidad de las Fuerzas Armadas ESPE sede Santo Domingo cuenta con 3 carreras muy importantes.
+              </div>
+            </div>
+          </div>
+
+          <!-- Nota 2 -->
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-card mdl-shadow--2dp note-card">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Nota 2</h2>
+              </div>
+              <div class="mdl-card__media">
+                <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" class="img-card" alt="ESPE">
+              </div>
+              <div class="mdl-card__supporting-text">
+                Estudiar en la Universidad de las Fuerzas Armadas te da muchas oportunidades. ¡Estudia aquí!
+              </div>
+            </div>
+          </div>
+
+          <!-- Nota 3 -->
+          <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-card mdl-shadow--2dp note-card">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Nota 3</h2>
+              </div>
+              <div class="mdl-card__media">
+                <img src="https://redestel-ugt.espe.edu.ec/wp-content/uploads/2019/08/Espe-Std.jpg" class="img-card" alt="ESPE">
+              </div>
+              <div class="mdl-card__supporting-text">
+                En la Universidad de las Fuerzas Armadas ESPE lo mejor son los estudiantes.
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Snackbar -->
         <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
@@ -47,7 +98,7 @@
     </main>
   </div>
 
-  <!-- Botón flotante -->
+  <!-- Botón flotante con signo + -->
   <button id="save-note-btn" 
           class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
     <i class="material-icons">add</i>
